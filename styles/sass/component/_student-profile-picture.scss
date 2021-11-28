@@ -1,0 +1,45 @@
+.student-profile__picture-wrapper{
+    p{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+}
+
+.student-profile__picture-shower {
+    width: 50%;
+    margin: auto;
+    img{
+        width: 100%;
+        border-radius: 19px;
+        object-fit: contain;
+        height: 100%;
+    }
+
+    @include media-breakpoint-down('md'){
+        &{
+            width: 90%;
+        }
+    }
+}
+
+.student-profile__picture-bottom{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}
+
+.change-input-btn{
+    position: relative;
+    input{
+        position: absolute;
+        opacity: .00001;
+        left: -50%;
+    }
+}

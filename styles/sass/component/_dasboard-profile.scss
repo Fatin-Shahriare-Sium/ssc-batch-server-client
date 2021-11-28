@@ -1,0 +1,30 @@
+.dasboard-profile{
+    padding: 3rem;
+}
+.update-profile__bottom-btn{
+    width: 50%;
+    margin: 3% auto;
+    display: flex;
+    justify-content: center;
+    button{
+        font-size: 1.9rem;
+    }
+}
+.offcanvas{
+    visibility: visible!important;
+}
+.offcanvas-start{
+    animation: bringBack 1s forwards!important;
+}
+
+@keyframes bringBack{
+    to{
+        transform: translateX(0%)
+    }
+}
+
+@include media-breakpoint-up('md'){
+    .menu-icon{
+        display: none;
+    }
+}

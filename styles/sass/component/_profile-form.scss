@@ -1,0 +1,11 @@
+.update__profile-social-links{
+    margin-top: 1% auto;
+    &>div{
+        width: 93%;
+        margin: auto;
+    }
+    p{
+        text-decoration: underline;
+        font-weight: 700;
+    }
+}

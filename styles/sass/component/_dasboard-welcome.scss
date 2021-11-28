@@ -1,0 +1,29 @@
+.dasboard-weolcome{
+    p{
+        font-weight: 700;
+        line-height: 3rem;
+        font-size: 4rem;
+    }
+    &:nth-child(1){
+        background: linear-gradient(to right, #50e236 9%, #0c41f0 60%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    }
+}
+
+@include media-breakpoint-down('md'){
+    .dasboard-left{
+        display: none;
+    };
+    .dasboard-rigth{
+        overflow-y:hidden
+    }
+}
+
+@include media-breakpoint-down('sm'){
+    .dasboard-weolcome{
+        p{
+            line-height: 4rem;
+        }
+    }
+}

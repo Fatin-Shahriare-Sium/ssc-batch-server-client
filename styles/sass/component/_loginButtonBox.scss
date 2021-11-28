@@ -1,0 +1,30 @@
+.loginButtonBox__wrapper{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 7px;
+    padding: 7px;
+    transition:background-color .3s ease ;
+    &:hover{
+        background-color: mix(white,rgb(7, 247, 27),77%);
+    }
+}
+
+
+.loginButtonBox__icon {
+    padding: 3px;
+    img {
+        width: 30px;
+    }
+}
+.loginButtonBox__text{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5px;
+  p{
+      font-weight: 500;
+      line-height: 1rem;
+  }
+    
+}
