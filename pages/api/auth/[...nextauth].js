@@ -65,6 +65,10 @@ export default NextAuth({
 
             session.user.uid = user.uid;    //-- store the id of the user in the session data
             return Promise.resolve(session);
+        },
+        redirect: async (url, baseUrl) => {
+            console.log('URL', url)
+            return Promise.resolve(url)
         }
     },
 
