@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import SingleTab from './component/singleTab'
 import { createClient, Provider } from 'urql';
-import { SessionProvider } from "next-auth/client"
+import { Provider as Providerx } from "next-auth/client"
 import Offcanvas from './component/offCanvas'
 import useUrl from './component/hooks/useUrl'
 
@@ -59,13 +59,18 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   }
 
   return (
-    <Provider value={client}>
 
-      <div>
-        {renderComponent()}
-      </div>
+    <Providerx session={pageProps.session}>
 
-    </Provider>
+
+      <Provider value={client}>
+
+        <div>
+          {renderComponent()}
+        </div>
+
+      </Provider>
+    </Providerx>
   )
 
 
