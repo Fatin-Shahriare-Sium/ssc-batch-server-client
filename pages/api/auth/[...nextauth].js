@@ -29,7 +29,7 @@ export default NextAuth({
 
             if (user) { //-- if success, store the id of the user in jwt token
                 token.uid = user.id;
-                fetch('http://localhost:5000/', {
+                fetch('https://ssc-batch-server-client.vercel.app/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
