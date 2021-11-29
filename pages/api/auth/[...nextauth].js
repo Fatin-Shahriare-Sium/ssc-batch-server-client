@@ -29,34 +29,6 @@ export default NextAuth({
 
             if (user) { //-- if success, store the id of the user in jwt token
                 token.uid = user.id;
-                fetch('https://ssc-batch-server-client.vercel.app/graphql', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        query: `mutation ($name:String!,$gmail:String!,$uid:String){
-                            createStudent(name:$name,gmail:$gmail,uid:$uid){
-                                msg
-                                success
-                                id
-                                gmail
-                            }
-                        }
-                        `,
-                        variables: {
-                            gmail: user.email,
-                            name: user.name,
-                            uid: user.id
-                        },
-                    })
-                })
-                    .then((res) => res.json())
-                    .then(({ data }) => {
-                        let { createStudent } = data
-                        console.log(data);
-
-                    });
             }
             return Promise.resolve(token);
         },

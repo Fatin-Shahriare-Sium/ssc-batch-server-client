@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/client'
 import Loading from '../component/loading'
+import useCreateAccount from '../component/hooks/useCreateAccount'
 const Dasboard = () => {
-
+    let { createStudentAccount } = useCreateAccount()
     const [session, loading] = useSession()
     let [name, setName] = useState<string>('')
+
     useEffect(() => {
 
         if (!loading) {
             console.log('session!.user!.uid!', session);
+            localStorage.setItem('_studentUid', session!.user!.uid)!
+            let x = createStudentAccount(session!.user?.name!, session!.user?.email!, session!.user!.uid)
 
-            localStorage.setItem('_studentUid', session?.user.uid!)
         }
     }, [loading])
 
