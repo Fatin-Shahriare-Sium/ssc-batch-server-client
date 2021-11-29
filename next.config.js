@@ -1,14 +1,20 @@
+const withImages = require('next-images')
 
-module.exports = {
-  reactStrictMode: true,
-  eslint: { ignoreDuringBuilds: true },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    domains: ['']
-  },
-  webpack(config, options) {
-    return config
+
+module.exports = withImages(
+  {
+    reactStrictMode: true,
+    eslint: { ignoreDuringBuilds: true },
+    typescript: {
+      ignoreBuildErrors: true,
+    },
+    images: {
+      domains: ['']
+    },
+    webpack(config, options) {
+      return config
+    }
   }
-}
+
+
+)
